@@ -1,0 +1,14 @@
+Hello world!
+
+Welcome and thank you to contribute to the CityLife project !
+
+But before coding-contributing-"forking", you must read the following rules:
+
+#1 - Functions aspects rules:
+
+Due to the importance of functions in this project, in fact a consequence of the use of matricial calculus per example, each function must follow these rules:
+
+- For functions part from the engine, they must be called like this:
+engine-linked_name-of-function();
+
+i.e: economy_crisis(); for economy.

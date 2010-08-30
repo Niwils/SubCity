@@ -1,0 +1,15 @@
+Welcome to the CityLife project (nota bene: that's not the final name for this project. This name seems to be a registered name or a trademark, and I see it after I began the project. I'm currently looking for a new free-name. So if you've got ideas, you're welcome.).
+
+CityLife is a city simulation game under an opensource license like GPL or BSD (not choosen yet). It will count in its features the following engines:
+- economy,
+- inhabitants (flows, housing renewelment, transports use, wastes management, delinquance...),
+- industries (employment, economy inputs/outputs, wastes management, products avalaibility in the city, corruption...),
+- energy (use, pollution....)
+- transports (flows, pollution...)
+- etc, your ideas are welcome too :-)
+
+Of course, this projects is an adaptation of Sim City(tm) series. Yep that's true. But this is not a fork of Lincity. CityLife is a project written from scratch. Everything here is done by ourselves. So don't hesitate anymore, you want to discover new things in a cool project? Enroll yourself soldier!
+
+--
+Niels -Davelister- Grataloup
+Project founder.
