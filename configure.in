@@ -1,0 +1,42 @@
+# This is a BSDBuild configure script source. The ./configure script is
+# generated from this file via mkconfigure(1). For more information, see:
+# http://bsdbuild.hypertriton.com/.
+
+REGISTER("--enable-debug",              "General debugging. Deactivated by default.")
+
+# Name and version
+HDEFINE(CL_PROGNAME, "citylife")
+HDEFINE(CL_VERSION, "0.1")
+MDEFINE(CL_PROGNAME, ${CL_PROGNAME})
+
+# Check for a C compiler. If one exists, ${HAVE_CC} will be set
+CHECK(cc)
+
+# Check for SDL
+CHECK(sdl)
+
+# Monolitic build config headers
+C_INCLUDE_CONFIG(config_build.h)
+
+### OPTIONS ###
+if [ "${enable_debug}" = "yes" ]; then
+    HDEFINE(CL_DEBUG, "yes")
+    MDEFINE(DEBUG_FLAGS, "-g -ggdb3 -fno-inline")
+    want_debug=yes
+else
+    HUNDEF(CL_DEBUG)
+    want_debug=no
+fi
+
+ARCH=`uname -s`
+echo
+echo "Building ${CL_PROGNAME}-${CL_VERSION} on ${ARCH}"
+echo "      Prefix: ${PREFIX}"
+echo "          CC: ${CC}"
+echo
+echo "Build with:"
+echo "      Program name: ${DAEMON_NAME}"
+echo "      Debug:        ${want_debug}"
+echo "* Configuration successful."
+echo "* Use \"make\" and \"make install\" to build and install ${PROGNAME}"
+

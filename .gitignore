@@ -1,0 +1,8 @@
+*.o
+Makefile.config
+configure.lua
+config.log
+src/.depend
+src/citylife
+config_build.h
+config/
