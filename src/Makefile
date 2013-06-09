@@ -1,12 +1,11 @@
-TOP=	..
-PROG=	${CL_PROGNAME}
-SRCS=	citylife.c				\
-			engines/terra_genesis.c
 
+all: test_terra_genesis
 
+test_terra_genesis : test_terra_genesis.o engines/terra_genesis.o
+	gcc -o test_terra_genesis test_terra_genesis.o engines/terra_genesis.o
+  
 
-include ${TOP}/Makefile.config
-include ${TOP}/mk/build.prog.mk
-
-# Defined in ${TOP}/Makefile.config
-CFLAGS+=		-O2 -Wall ${DEBUG_FLAGS}
+%.o: %.c
+	gcc -g -c $^
+clean:
+	rm *.o

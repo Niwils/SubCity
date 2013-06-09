@@ -1,0 +1,12 @@
+TOP=	..
+PROG=	${CL_PROGNAME}
+SRCS=	test_terra_genesis.c				\
+			engines/terra_genesis.c
+
+
+
+include ${TOP}/Makefile.config
+include ${TOP}/mk/build.prog.mk
+
+# Defined in ${TOP}/Makefile.config
+CFLAGS+=		-O2 -Wall ${DEBUG_FLAGS}
