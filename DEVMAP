@@ -1,14 +1,40 @@
 Hello world!
 
-Welcome and thank you to contribute to the CityLife project !
+Welcome and thank you to contribute to the SubCity project!
 
-But before coding-contributing-"forking", you must read the following rules:
+SubCity is a video-game project involving the use of bio-inspired computing, such as:
+- Genetic algorithm
+- Genetic programming
+- Swarm-inspired agent design...
 
-#1 - Functions aspects rules:
+The game is now developed with C++, and uses the following libraries:
+- SDL for audio and graphical interfaces
+- CxxTests for tests
 
-Due to the importance of functions in this project, in fact a consequence of the use of matricial calculus per example, each function must follow these rules:
+----- The game mechanics -----
 
-- For functions part from the engine, they must be called like this:
-engine-linked_name-of-function();
+-- General model:
+The whole world the players evolve is a matrix of tiles. Each tile is a surface (water, accomodation; industry, transportation...).
+Each tile has properties that when linked together create multiple set of graphs, allowing the different parameters such as economics, transportation
+to evolve accordingly to the cities development.
 
-i.e: economy_crisis(); for economy.
+-- Graphics structure and 
+The idea is to have a game with a isometric 3d pixel art design. As there will be a maximum of 4 views, a building would be an image designed like this:
+
+|-----------|-----------|
+|			|			|
+| NW view   | NE view   |
+|			|			|
+|-----------|-----------|
+|			|			|
+| SW view   | SE view   |
+|			|			|
+|-----------|-----------|
+
+Where each view is the representation of the building in each possible player view.
+
+As we want the game to be community-sensitive, the development of a file format defining sets of tiles, and moving agents is planned.
+The idea is to allow constributors to create new agents with a simple description format, without having to touch the code.
+
+----- The structure -----
+T.B.A.
