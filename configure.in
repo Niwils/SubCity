@@ -5,7 +5,7 @@
 REGISTER("--enable-debug",              "General debugging. Deactivated by default.")
 
 # Name and version
-HDEFINE(CL_PROGNAME, "citylife")
+HDEFINE(CL_PROGNAME, "subcity")
 HDEFINE(CL_VERSION, "0.1")
 MDEFINE(CL_PROGNAME, ${CL_PROGNAME})
 
