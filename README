@@ -1,6 +1,6 @@
-Welcome to the CityLife project (nota bene: that's not the final name for this project. This name seems to be a registered name or a trademark, and I saw it after I began the project. I'm currently looking for a new free-name. So if you've got ideas, you're welcome.).
+Welcome to the SubCity project (nota bene: that's not the final name for this project, any good idea is welcome).
 
-CityLife is a city simulation game under BSD license (see LICENSE for more informations). It will count in its features the following engines:
+SubCity is a city simulation game under BSD license (see LICENSE for more informations). It will count in its features the following engines:
 - economy,
 - inhabitants (flows, housing renewelment, transports use, wastes management, delinquance...),
 - industries (employment, economy inputs/outputs, wastes management, products avalaibility in the city, corruption...),
@@ -8,8 +8,11 @@ CityLife is a city simulation game under BSD license (see LICENSE for more infor
 - transports (flows, pollution...)
 - etc, your ideas are welcome too :-)
 
+What makes SubCity unique in its approach is the use of bio-inspired algorithms, such as Genetics-Algorithm, Ant colonies, etc.
+
 Of course, this projects is an adaptation of Sim City(tm) series. Yep that's true. But this is not a fork of Lincity. CityLife is a project written from scratch. Everything here is done by ourselves. So don't hesitate anymore, you want to discover new things in a cool project? Enroll yourself soldier!
 
 --
-Niels -Davelister- Grataloup
-Project founder.
+Developers' corner:
+- We plan to use SDL for the human machine interface
+- Design rendering may be inspired by (Open) Transport Tycoon Deluxe. Pixel artists, you are welcome!

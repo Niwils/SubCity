@@ -14,6 +14,9 @@
 *
 */
 
+#pragma once
+#include <types/defs.hpp>
+
 namespace subcity {
 
   namespace world {
