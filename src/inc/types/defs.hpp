@@ -14,6 +14,11 @@
 *
 */
 
+#include <stdint.h>
+
+/** Structures for engine purposes only */
+typedef uint32_t scTick;
+
 /** Structures for coordinates **/
 
 typedef int scCoordinate;

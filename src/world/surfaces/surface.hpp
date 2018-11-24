@@ -16,22 +16,27 @@
 
 #pragma once
 #include <types/defs.hpp>
+#include <engine/VSchedulableClass.hpp>
 
 namespace subcity {
 
   namespace world {
-	class Surface {
+	class Surface : public VSchedulableClass
+	{
 		public:
 			Surface(scCoordinates _coord);
 		
 			~Surface() = 0;
 
-			void execute() = 0;
+			virtual void execute() = 0;
 			
 			
 	
 		private:
 			scCoordinates coord;
+	};
+  }
+}
 		
 
 #endif
