@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_FMOAsPCKEeiAh4sD9WFcIw" name="NewModel">
+  <packagedElement xmi:type="uml:Class" xmi:id="_jHWXsPCKEeiAh4sD9WFcIw" name="GameObjectsScheduler" visibility="public">
+    <ownedAttribute xmi:id="_kcKxYPCREeiAh4sD9WFcIw" name="mNextExec" visibility="private"/>
+    <ownedAttribute xmi:id="_ktr_MPCREeiAh4sD9WFcIw" name="mTickRate" visibility="private"/>
+    <ownedOperation xmi:id="_itDfAPCjEeiAh4sD9WFcIw" name="getObject">
+      <ownedParameter xmi:id="_mT1_gPCjEeiAh4sD9WFcIw" name="_uuid"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_mA4JkPCKEeiAh4sD9WFcIw" name="VSchedulableClass" visibility="public" isAbstract="true">
+    <generalization xmi:id="_2YYaIPCjEeiAh4sD9WFcIw" general="_vjPuUPCjEeiAh4sD9WFcIw"/>
+    <ownedAttribute xmi:id="_wkIQcPCLEeiAh4sD9WFcIw" name="mTickRate" visibility="protected"/>
+    <ownedAttribute xmi:id="_xzSyQPCLEeiAh4sD9WFcIw" name="mNextExec" visibility="protected"/>
+    <ownedOperation xmi:id="_07ptgPCPEeiAh4sD9WFcIw" name="VSchedulableClass">
+      <ownedParameter xmi:id="_9GZE4PCQEeiAh4sD9WFcIw" name="_ticksPeriod"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_rERyAPCKEeiAh4sD9WFcIw" name="execute">
+      <ownedComment xmi:id="_vzdogPCLEeiAh4sD9WFcIw" annotatedElement="_rERyAPCKEeiAh4sD9WFcIw">
+        <body>For each inherited class, when its execution time is signaled, update its internal attributes accordingly.</body>
+      </ownedComment>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_2XXLoPCREeiAh4sD9WFcIw" name="mScheduledObjects" visibility="private" memberEnd="_2XXysPCREeiAh4sD9WFcIw _2XXys_CREeiAh4sD9WFcIw" navigableOwnedEnd="_2XXys_CREeiAh4sD9WFcIw">
+    <ownedEnd xmi:id="_2XXysPCREeiAh4sD9WFcIw" name="schedulers" type="_jHWXsPCKEeiAh4sD9WFcIw" association="_2XXLoPCREeiAh4sD9WFcIw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2XXysfCREeiAh4sD9WFcIw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2XXysvCREeiAh4sD9WFcIw" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_2XXys_CREeiAh4sD9WFcIw" name="vSchedulableClasss" type="_mA4JkPCKEeiAh4sD9WFcIw" aggregation="composite" association="_2XXLoPCREeiAh4sD9WFcIw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2XXytPCREeiAh4sD9WFcIw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2XXytfCREeiAh4sD9WFcIw" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_YBOeMPCSEeiAh4sD9WFcIw" name="GameEngine" visibility="public">
+    <generalization xmi:id="_iv-1APCUEeiAh4sD9WFcIw" general="_0I-WkPCTEeiAh4sD9WFcIw"/>
+    <ownedOperation xmi:id="_5MVQ0PCVEeiAh4sD9WFcIw" name="processEvent" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_mJ0wkPCSEeiAh4sD9WFcIw" name="mSchedulers" visibility="private" memberEnd="_mJ1XoPCSEeiAh4sD9WFcIw _mJ1Xo_CSEeiAh4sD9WFcIw" navigableOwnedEnd="_mJ1Xo_CSEeiAh4sD9WFcIw">
+    <ownedEnd xmi:id="_mJ1XoPCSEeiAh4sD9WFcIw" name="gameEngines" type="_YBOeMPCSEeiAh4sD9WFcIw" association="_mJ0wkPCSEeiAh4sD9WFcIw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mJ1XofCSEeiAh4sD9WFcIw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mJ1XovCSEeiAh4sD9WFcIw" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_mJ1Xo_CSEeiAh4sD9WFcIw" name="schedulers" type="_jHWXsPCKEeiAh4sD9WFcIw" aggregation="composite" association="_mJ0wkPCSEeiAh4sD9WFcIw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mJ1XpPCSEeiAh4sD9WFcIw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mJ1XpfCSEeiAh4sD9WFcIw" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_6_Cr8PCSEeiAh4sD9WFcIw" name="VideoRenderer" visibility="public"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_XBrQQPCTEeiAh4sD9WFcIw" name="mVideoRenderer" memberEnd="_XBrQQfCTEeiAh4sD9WFcIw _XBrQRPCTEeiAh4sD9WFcIw" navigableOwnedEnd="_XBrQQfCTEeiAh4sD9WFcIw _XBrQRPCTEeiAh4sD9WFcIw">
+    <ownedEnd xmi:id="_XBrQQfCTEeiAh4sD9WFcIw" name="gameEngines" type="_YBOeMPCSEeiAh4sD9WFcIw" association="_XBrQQPCTEeiAh4sD9WFcIw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XBrQQvCTEeiAh4sD9WFcIw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XBrQQ_CTEeiAh4sD9WFcIw" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_XBrQRPCTEeiAh4sD9WFcIw" name="VideoRenderer" type="_6_Cr8PCSEeiAh4sD9WFcIw" association="_XBrQQPCTEeiAh4sD9WFcIw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XBrQRfCTEeiAh4sD9WFcIw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XBrQRvCTEeiAh4sD9WFcIw" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_0I-WkPCTEeiAh4sD9WFcIw" name="VEventListener" visibility="public" isAbstract="true">
+    <ownedOperation xmi:id="_g2ypUPCVEeiAh4sD9WFcIw" name="processEvent" visibility="public" isAbstract="true"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_vjPuUPCjEeiAh4sD9WFcIw" name="VGameElementClass" visibility="public" isAbstract="true">
+    <ownedAttribute xmi:id="_56vtoPCjEeiAh4sD9WFcIw" name="mUuid" visibility="protected"/>
+    <interfaceRealization xmi:id="_lCSXkPDQEeiAh4sD9WFcIw" client="_vjPuUPCjEeiAh4sD9WFcIw" supplier="_OINogPDQEeiAh4sD9WFcIw" contract="_OINogPDQEeiAh4sD9WFcIw"/>
+    <ownedOperation xmi:id="_zqrL0PClEeiAh4sD9WFcIw" name="getUUID"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_GWrp4PCkEeiAh4sD9WFcIw" name="mGameElements" memberEnd="_GWrp4fCkEeiAh4sD9WFcIw _GWsQ8vCkEeiAh4sD9WFcIw" navigableOwnedEnd="_GWsQ8vCkEeiAh4sD9WFcIw">
+    <ownedEnd xmi:id="_GWrp4fCkEeiAh4sD9WFcIw" name="gameEngines" type="_YBOeMPCSEeiAh4sD9WFcIw" association="_GWrp4PCkEeiAh4sD9WFcIw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GWsQ8PCkEeiAh4sD9WFcIw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GWsQ8fCkEeiAh4sD9WFcIw" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_GWsQ8vCkEeiAh4sD9WFcIw" name="gameElementClasss" type="_vjPuUPCjEeiAh4sD9WFcIw" aggregation="composite" association="_GWrp4PCkEeiAh4sD9WFcIw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GWsQ8_CkEeiAh4sD9WFcIw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GWsQ9PCkEeiAh4sD9WFcIw" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_8LjrIPDOEeiAh4sD9WFcIw" name="GameElementFactory" visibility="public"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_BqmGsPDPEeiAh4sD9WFcIw" name="mGameElementFactory" memberEnd="_BqmGsfDPEeiAh4sD9WFcIw _BqmGtPDPEeiAh4sD9WFcIw" navigableOwnedEnd="_BqmGsfDPEeiAh4sD9WFcIw _BqmGtPDPEeiAh4sD9WFcIw">
+    <ownedEnd xmi:id="_BqmGsfDPEeiAh4sD9WFcIw" name="gameEngines" type="_YBOeMPCSEeiAh4sD9WFcIw" association="_BqmGsPDPEeiAh4sD9WFcIw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BqmGsvDPEeiAh4sD9WFcIw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BqmGs_DPEeiAh4sD9WFcIw" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_BqmGtPDPEeiAh4sD9WFcIw" name="gameElementFactorys" type="_8LjrIPDOEeiAh4sD9WFcIw" association="_BqmGsPDPEeiAh4sD9WFcIw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BqmGtfDPEeiAh4sD9WFcIw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BqmGtvDPEeiAh4sD9WFcIw" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_OINogPDQEeiAh4sD9WFcIw" name="GameElementFactory" visibility="public"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_nj4xoPDQEeiAh4sD9WFcIw" name="mGameElementFactories" memberEnd="_nj4xofDQEeiAh4sD9WFcIw _nj7N4fDQEeiAh4sD9WFcIw" navigableOwnedEnd="_nj7N4fDQEeiAh4sD9WFcIw">
+    <ownedEnd xmi:id="_nj4xofDQEeiAh4sD9WFcIw" name="gameElementFactorys" type="_OINogPDQEeiAh4sD9WFcIw" association="_nj4xoPDQEeiAh4sD9WFcIw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nj6m0PDQEeiAh4sD9WFcIw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nj7N4PDQEeiAh4sD9WFcIw" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_nj7N4fDQEeiAh4sD9WFcIw" name="gameEngines" type="_YBOeMPCSEeiAh4sD9WFcIw" association="_nj4xoPDQEeiAh4sD9WFcIw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nj7N4vDQEeiAh4sD9WFcIw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nj7N4_DQEeiAh4sD9WFcIw" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>
