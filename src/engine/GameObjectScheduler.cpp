@@ -12,23 +12,23 @@
 *
 */
 
-#include "Scheduler.hpp"
+#include "GameObjectScheduler.hpp"
 
 namespace subcity {
 
   namespace engine {
 	
-	Scheduler::Scheduler(scTick _tickrate, scTick _currentTick)
+	GameObjectScheduler::GameObjectScheduler(scTick _tickrate, scTick _currentTick)
 	: mTickRate(_tickrate)
 	, mNextExec(_currentTick + _tickrate)
 	{
 	}
 		
-	Scheduler::~Scheduler()
+	GameObjectScheduler::~GameObjectScheduler()
 	{
 	}
 
-	bool Scheduler::isPlanned(scTick _currentTick)
+	bool GameObjectScheduler::isPlanned(scTick _currentTick)
 	{
 		if(mNextExec <= _currentTick)
 		{
@@ -38,12 +38,12 @@ namespace subcity {
 		return false;
 	}
 
-	void Scheduler::addSchedulableObject(VSchedulableClass *_schedulableObject)
+	void GameObjectScheduler::addSchedulableObject(VSchedulableClass *_schedulableObject)
 	{
 		mTestClass = _schedulableObject;
 	}
 
-	void Scheduler::execute(scTick _currentTick)
+	void GameObjectScheduler::execute(scTick _currentTick)
 	{
 	 	// TODO
 

@@ -20,12 +20,12 @@
 
 namespace subcity {
   namespace engine {
-	class Scheduler 
+	class GameObjectScheduler 
 	{
 		public:
-			Scheduler(scTick _tickrate, scTick _currentTick);
+			GameObjectScheduler(scTick _tickrate, scTick _currentTick);
 		
-			~Scheduler();
+			~GameObjectScheduler();
 
 			bool isPlanned(scTick _currentTick);
 

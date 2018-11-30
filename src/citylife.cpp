@@ -17,7 +17,7 @@ int main(void)
 
 	u32_ticks = SDL_GetTicks();
 
-	subcity::engine::Scheduler *mScheduler = new subcity::engine::Scheduler(1000, u32_ticks);
+	subcity::engine::GameObjectScheduler *mScheduler = new subcity::engine::GameObjectScheduler(1000, u32_ticks);
 	test::engine::DummySchedulableClass *mObject = new test::engine::DummySchedulableClass(2000, u32_ticks);
 	mScheduler->addSchedulableObject(mObject);
 	do

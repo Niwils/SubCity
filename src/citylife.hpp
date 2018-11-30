@@ -15,7 +15,7 @@
 */
 
 #include "inc/types/defs.hpp"
-#include "engine/Scheduler.hpp"
+#include <GameObjectScheduler.hpp>
 #include "../test/DummySchedulableClass.hpp"
 
 class SubCity

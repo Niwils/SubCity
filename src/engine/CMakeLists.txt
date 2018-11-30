@@ -1,6 +1,11 @@
+target_include_directories(${PROJECT_NAME}
+	PRIVATE
+	"${CMAKE_CURRENT_LIST_DIR}"
+)
 target_sources(${PROJECT_NAME}
 	PUBLIC
-	"${CMAKE_CURRENT_LIST_DIR}/Scheduler.hpp"
-	"${CMAKE_CURRENT_LIST_DIR}/Scheduler.cpp"
-	"${CMAKE_CURRENT_LIST_DIR}/VSchedulableClass.hpp"
+	"${CMAKE_CURRENT_LIST_DIR}/GameEngine.cpp"
+	"${CMAKE_CURRENT_LIST_DIR}/GameElementFactory.cpp"
+	"${CMAKE_CURRENT_LIST_DIR}/GameObjectScheduler.cpp"
+	"${CMAKE_CURRENT_LIST_DIR}/VideoRenderer.cpp"
 )
