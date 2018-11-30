@@ -15,9 +15,12 @@
 */
 
 #include <stdint.h>
+#include <boost/uuid/uuid.hpp>
 
 /** Structures for engine purposes only */
 typedef uint32_t scTick;
+
+typedef boost::uuids::uuid scUuid;
 
 /** Structures for coordinates **/
 

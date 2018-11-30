@@ -11,16 +11,21 @@ int main(void)
 	}
 
 	bool b_quit = false; 
-	uint32_t  u32_ticks = 0;
-	uint32_t u32_prev = 0;
+	scTick  u32_ticks = 0;
+	scTick u32_prev = 0;
 	int icpt = 0;
+
+	u32_ticks = SDL_GetTicks();
+
+	subcity::engine::Scheduler *mScheduler = new subcity::engine::Scheduler(1000, u32_ticks);
+	test::engine::DummySchedulableClass *mObject = new test::engine::DummySchedulableClass(2000, u32_ticks);
+	mScheduler->addSchedulableObject(mObject);
 	do
 	{
 		u32_ticks = SDL_GetTicks();
-		if(1000 < (u32_ticks - u32_prev))
+		if(mScheduler->isPlanned(u32_ticks))
 		{
-			u32_prev = u32_ticks;
-			std::cout <<  "Top!" << std::endl;
+			mScheduler->execute(u32_ticks);
 			icpt++;
 		}
 
@@ -33,5 +38,7 @@ int main(void)
 	while(!b_quit);
 
 	SDL_Quit();
+	delete mObject;
+	delete mScheduler;
 	return 0;
 }
