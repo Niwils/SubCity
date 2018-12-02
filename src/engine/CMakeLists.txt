@@ -1,8 +1,9 @@
-target_include_directories(${PROJECT_NAME}
-	PRIVATE
+add_library(engine)
+target_include_directories(engine
+	PUBLIC
 	"${CMAKE_CURRENT_LIST_DIR}"
 )
-target_sources(${PROJECT_NAME}
+target_sources(engine
 	PUBLIC
 	"${CMAKE_CURRENT_LIST_DIR}/GameEngine.cpp"
 	"${CMAKE_CURRENT_LIST_DIR}/GameElementFactory.cpp"

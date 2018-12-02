@@ -20,6 +20,8 @@
 /** Structures for engine purposes only */
 typedef uint32_t scTick;
 
+typedef uint8_t scUINT8;
+
 typedef boost::uuids::uuid scUuid;
 
 /** Structures for coordinates **/
